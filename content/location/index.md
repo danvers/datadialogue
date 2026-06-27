@@ -56,7 +56,7 @@ We recommend using public transport whenever possible.
 
 We have reserved a contingent of rooms at **Motel Römer** for participants. Further information on booking and reservation codes will be provided after registration.
 
-### Close to Campus Westend (walking distance or short public transport ride)
+### Close to Campus Westend
 
 - **Hotel Palmenhof** – Quiet boutique hotel close to Campus Westend  
   https://www.hotel-palmenhof.de/
