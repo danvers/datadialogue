@@ -249,7 +249,10 @@ a.logo-slot.has-logo:hover {
   max-width: 100%;
   max-height: 56px;
   object-fit: contain;
+  filter: grayscale(1);
+  transition: filter 0.2s ease;
 }
+a.logo-slot.has-logo:hover img { filter: grayscale(0); }
 
 /* section heading */
 .section-heading {
@@ -273,23 +276,42 @@ a.logo-slot.has-logo:hover {
   text-align: center;
 }
 .person-card { flex: 0 1 150px; max-width: 150px; }
-.person-card .avatar {
+
+.avatar-flip {
   width: 64px;
   height: 64px;
   margin: 0 auto 0.85rem;
+  perspective: 480px;
+}
+.avatar-flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transform-style: preserve-3d;
+}
+.person-card:hover .avatar-flip-inner,
+.person-card:focus-within .avatar-flip-inner {
+  transform: rotateY(180deg);
+}
+.avatar {
+  position: absolute;
+  inset: 0;
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: "IBM Plex Mono", monospace;
-  font-size: 1.05rem;
+  font-size: 1.4rem;
   font-weight: 500;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   color: var(--ink);
   background: var(--paper);
   border: 2px solid var(--ink);
-  position: relative;
+  backface-visibility: hidden;
 }
-.person-card .avatar::after {
+.avatar-front { position: relative; }
+.avatar-front::after {
   content: "";
   position: absolute;
   right: -5px;
@@ -298,6 +320,12 @@ a.logo-slot.has-logo:hover {
   height: 10px;
   background: var(--accent);
 }
+.avatar-back {
+  background: var(--ink);
+  border-color: var(--ink);
+  transform: rotateY(180deg);
+}
+.avatar-back-mark { width: 30px; height: 30px; }
 .person-name {
   margin: 0 0 0.15rem;
   font-weight: 700;
@@ -481,6 +509,16 @@ a.logo-slot.has-logo:hover {
 }
 .prose h2:first-of-type { margin-top: 0; }
 .prose h2::before { content: "// "; color: var(--accent); }
+.prose h3 {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 700;
+  font-size: 0.88rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin: 1.8rem 0 0.9rem;
+}
+.prose h3::before { content: "/// "; color: var(--accent); }
 .prose ul {
   margin: 0 0 1.3rem;
   padding-left: 1.3rem;

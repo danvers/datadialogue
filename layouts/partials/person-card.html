@@ -2,7 +2,12 @@
 {{ $initials := "" }}
 {{ range first 2 (split $p.name " ") }}{{ $initials = print $initials (substr . 0 1) }}{{ end }}
 <div class="person-card"{{ if $p.bio }} title="{{ $p.bio }}"{{ end }}>
-  <div class="avatar">{{ $initials }}</div>
+  <div class="avatar-flip">
+    <div class="avatar-flip-inner">
+      <div class="avatar avatar-front">{{ $initials }}</div>
+      <div class="avatar avatar-back"><img src="/images/mark-light.svg" alt="" class="avatar-back-mark"></div>
+    </div>
+  </div>
   <h3 class="person-name">{{ $p.name }}</h3>
   <p class="person-role">{{ $p.role }}</p>
 </div>
