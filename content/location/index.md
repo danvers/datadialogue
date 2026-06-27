@@ -53,7 +53,7 @@ We have reserved a contingent of rooms at **Motel One at Römer** for participan
 - **Turm Hotel Frankfurt** – Comfortable mid-range hotel near Campus Westend  
   <https://www.turmhotel-frankfurt.de/>
 
-- **SAKS Urban Design Hotel Frankfurt** – Stylish design hotel in the Westend, just a short walk from Campus Westend  
+- **SAKS Urban Design Hotel Frankfurt** – Stylish design hotel in the Westend  
   <https://www.saksurban.com/>
 
 ### Other Recommended Options
@@ -62,7 +62,7 @@ We have reserved a contingent of rooms at **Motel One at Römer** for participan
   <https://www.scandichotels.com/hotels/germany/frankfurt/scandic-frankfurt-hafenpark>
 
 - **NH Frankfurt Spin Tower** *(mid- to upper-price range)*  
-  <https://www.nh-hotels.com/en/hotel/nh-frankfurt-spin-tower>
+  <https://www.nh-hotels.com/en/hotel/nh-collection-frankfurt-spin-tower>
 
 - **B&B Hotel Frankfurt City-Ost** *(budget-friendly)*  
   <https://www.hotel-bb.com/en/hotel/frankfurt-city-ost>
