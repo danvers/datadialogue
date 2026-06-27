@@ -1,0 +1,18 @@
+- name: "Goethe University, Westend"
+  img: "/images/westend-winter.jpg"
+  alt: "Goethe University, Westend"
+  url: "https://www.uni-frankfurt.de/en/ueber-die-universitaet/campus-standorte/westend"
+  address:
+    - "Theodor-W.-Adorno-Platz 1"
+    - "60323 Frankfurt am Main"
+  note: "The exact building and room information will be announced closer to the event."
+  copyright: "Uwe Dettmar"
+- name: "display, City of Frankfurt"
+  img: "/images/display.jpg"
+  alt: "display, City of Frankfurt "
+  url: "https://d-i-s-p-l-a-y.de/de/space"
+  address:
+    - "Berliner Straße 60"
+    - "60311 Frankfurt am Main"
+  note: ""
+  copyright: "Eda Temucin"

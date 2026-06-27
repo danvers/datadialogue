@@ -1,0 +1,32 @@
+{{- /* Side-by-side venue cards. Data: data/venues.yaml */ -}}
+<div class="venue-grid">
+  {{- range site.Data.venues }}
+  <article class="venue-card">
+    <span class="venue-frame" aria-hidden="true"></span>
+    {{- if .url }}
+    <a class="venue-media" href="{{ .url }}" target="_blank" rel="noopener" aria-label="{{ .name }}">
+      <img src="{{ .img }}" alt="{{ .alt | default .name }}" loading="lazy">
+      {{- with .copyright }}<span class="venue-credit mono">© {{ . }}</span>{{ end }}
+    </a>
+    {{- else }}
+    <span class="venue-media">
+      <img src="{{ .img }}" alt="{{ .alt | default .name }}" loading="lazy">
+      {{- with .copyright }}<span class="venue-credit mono">© {{ . }}</span>{{ end }}
+    </span>
+    {{- end }}
+    <div class="venue-body">
+      <h3 class="venue-name">
+        {{- if .url -}}
+        <a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a>
+        {{- else -}}
+        {{ .name }}
+        {{- end -}}
+      </h3>
+      {{- with .address }}
+      <p class="venue-address">{{ range $i, $line := . }}{{ if $i }}<br>{{ end }}{{ $line }}{{ end }}</p>
+      {{- end }}
+      {{- with .note }}<p class="venue-note">{{ . }}</p>{{ end }}
+    </div>
+  </article>
+  {{- end }}
+</div>

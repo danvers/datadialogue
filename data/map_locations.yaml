@@ -4,7 +4,7 @@
   sub: "Goethe University · Campus Westend"
   kind: "Main venue"
   pos: "top"
-  url: "https://www.uni-frankfurt.de/en"
+  url: "https://www.uni-frankfurt.de/en/ueber-die-universitaet/campus-standorte/westend"
   program: "/program/"
   x: 40.47
   y: 21.69
@@ -34,7 +34,7 @@
   sub: "Berliner Str. 60 · Exhibition"
   kind: "Exhibition"
   pos: "top"
-  url: "https://nodeforum.org/activities/display/"
+  url: "https://d-i-s-p-l-a-y.de/de/space"
   program: "/program/#thu"
   x: 59.61
   y: 74.83

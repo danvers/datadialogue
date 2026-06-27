@@ -483,6 +483,144 @@ a.logo-slot.has-logo:hover img { filter: grayscale(0); }
   .schedule-icon { margin-top: 0; }
 }
 
+/* venue cards (Location) — two venues side by side */
+.venue-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin: 0.5rem 0 2.5rem;
+}
+.venue-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border: 2px solid var(--ink);
+}
+/* black frame that fills in accent green on hover, tracing diagonally
+   outward from two diametrically opposite corners (top-left + bottom-right).
+   Four 2px bars sit on top of the black border:
+     card::before  = top edge   (grows left  -> right, from top-left)
+     card::after   = left edge   (grows top   -> down,  from top-left)
+     frame::before = bottom edge (grows right -> left,  from bottom-right)
+     frame::after  = right edge  (grows down  -> up,    from bottom-right) */
+.venue-frame {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.venue-card::before,
+.venue-card::after,
+.venue-frame::before,
+.venue-frame::after {
+  content: "";
+  position: absolute;
+  background: var(--accent);
+  z-index: 2;
+  transition: transform 0.45s ease;
+}
+.venue-card::before {
+  top: -2px; left: -2px; right: -2px; height: 2px;
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+.venue-card::after {
+  top: -2px; left: -2px; bottom: -2px; width: 2px;
+  transform: scaleY(0);
+  transform-origin: center top;
+}
+.venue-frame::before {
+  bottom: -2px; left: -2px; right: -2px; height: 2px;
+  transform: scaleX(0);
+  transform-origin: right center;
+}
+.venue-frame::after {
+  top: -2px; right: -2px; bottom: -2px; width: 2px;
+  transform: scaleY(0);
+  transform-origin: center bottom;
+}
+.venue-card:hover::before,
+.venue-card:focus-within::before,
+.venue-card:hover .venue-frame::before,
+.venue-card:focus-within .venue-frame::before { transform: scaleX(1); }
+.venue-card:hover::after,
+.venue-card:focus-within::after,
+.venue-card:hover .venue-frame::after,
+.venue-card:focus-within .venue-frame::after { transform: scaleY(1); }
+
+.venue-media {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-bottom: 2px solid var(--ink);
+}
+/* image credit — discreet mono note, bottom-right of the photo */
+.venue-credit {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 0.2rem 0.45rem;
+  font-size: 0.58rem;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  color: var(--paper);
+  background: rgba(11, 11, 11, 0.55);
+  z-index: 2;
+  pointer-events: none;
+}
+/* override the generic .prose img frame/margins for the venue image */
+.prose .venue-card img {
+  display: block;
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  margin: 0;
+  border: 0;
+  filter: grayscale(1);
+  transition: filter 0.3s ease;
+}
+.venue-card:hover img,
+.venue-card:focus-within img { filter: grayscale(0); }
+
+.venue-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  flex: 1;
+  padding: 1rem 1.25rem 1.25rem;
+}
+.prose .venue-name {
+  margin: 0;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink);
+  line-height: 1.35;
+}
+.venue-name a {
+  color: var(--ink);
+  text-decoration: none;
+}
+.venue-name a:hover { color: var(--charcoal); }
+.prose .venue-address,
+.prose .venue-note {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--charcoal);
+}
+.prose .venue-note {
+  margin-top: auto;
+  padding-top: 0.2rem;
+  font-size: 0.76rem;
+}
+
+@media (max-width: 620px) {
+  .venue-grid { grid-template-columns: 1fr; }
+}
+
 /* location map */
 .map-figure {
   margin: 1.6rem 0 2.25rem;

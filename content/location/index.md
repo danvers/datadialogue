@@ -10,19 +10,11 @@ The winter school plays out across a handful of places in Frankfurt's Westend an
 
 {{< location-map >}}
 
-## Venue
+## Venues
 
-Data Dialogue will take place at **Goethe University Frankfurt**, **Campus Westend**, one of Germany's most renowned university campuses.
+The initial **RMU Data Dialogue** will take place at **Goethe University Frankfurt**, **Campus Westend**, one of Germany's most renowned university campuses. The Thursday exhibition is hosted at **display** in Frankfurt's city centre.
 
-### Address
-
-Goethe University Frankfurt  
-Campus Westend  
-Theodor-W.-Adorno-Platz 1  
-60323 Frankfurt am Main  
-Germany
-
-The exact building and room information will be announced closer to the event.
+{{< venues >}}
 
 ## Travel
 
