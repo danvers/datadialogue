@@ -1,8 +1,14 @@
 +++
-title = 'Practical Info'
+title = 'Location'
 +++
 
 Everything you need to know for attending the **RMU Data Dialogue** in December 2026.
+
+## Locations
+
+The winter school plays out across a handful of places in Frankfurt's Westend and city centre — the venue, the Wednesday dinner, the exhibition, and the recommended hotel.
+
+{{< location-map >}}
 
 ## Venue
 

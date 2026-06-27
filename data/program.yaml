@@ -14,9 +14,9 @@
       title: "Get Together — PA Lobby"
       type: break
     - time: "19:00"
-      title: "Dinner together"
+      title: "Dinner together — Naná"
       type: meal
-      details: "Group dinner to close out Day 1. Placeholder text — replace with the real location and details."
+      details: "Group dinner to close out Day 1 at Naná, a convivial Sicilian/Italian kitchen in the Westend (Grüneburgweg 95, a short walk from Campus Westend)."
 
 - id: thu
   weekday: "Thursday"

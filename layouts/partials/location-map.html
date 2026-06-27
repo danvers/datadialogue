@@ -1,0 +1,77 @@
+{{ $locs := hugo.Data.map_locations }}
+{{ $points := slice }}
+{{ range $locs }}{{ if ne .id "hotel" }}{{ $points = $points | append (printf "%v,%v" .x .y) }}{{ end }}{{ end }}
+{{ $mapSvg := resources.Get "images/frankfurt-map-roads.svg" | resources.Minify }}
+
+{{/* logo-style tile dissolve: build a padded bounding box around the markers,
+     then tile the cells that fall outside it (the unimportant edges) in the
+     page background colour so the map dissolves into the page */}}
+{{ $minX := 999.0 }}{{ $maxX := -999.0 }}{{ $minY := 999.0 }}{{ $maxY := -999.0 }}
+{{ range $locs }}
+  {{ if lt .x $minX }}{{ $minX = .x }}{{ end }}
+  {{ if gt .x $maxX }}{{ $maxX = .x }}{{ end }}
+  {{ if lt .y $minY }}{{ $minY = .y }}{{ end }}
+  {{ if gt .y $maxY }}{{ $maxY = .y }}{{ end }}
+{{ end }}
+{{ $bMinX := sub $minX 12.0 }}{{ $bMaxX := add $maxX 12.0 }}
+{{ $bMinY := sub $minY 10.0 }}{{ $bMaxY := add $maxY 10.0 }}
+{{ $cols := 16 }}{{ $rows := 9 }}
+{{ $aspect := 1.7778 }}{{ $ragged := 14.5 }}
+{{ $g := 0.026 }}{{ $cMax := sub $cols 1 }}{{ $rMax := sub $rows 1 }}
+
+<div class="map-frame">
+  <img src="{{ $mapSvg.RelPermalink }}" alt="Map of Frankfurt am Main" class="map-bg">
+  <svg class="map-tiles" viewBox="0 0 {{ $cols }} {{ $rows }}" preserveAspectRatio="none" aria-hidden="true">
+    {{ range $ri := seq $rows }}{{ $r := sub $ri 1 }}
+    {{ range $ci := seq $cols }}{{ $c := sub $ci 1 }}
+      {{ $cx := mul (div (add $c 0.5) $cols) 100.0 }}
+      {{ $cy := mul (div (add $r 0.5) $rows) 100.0 }}
+      {{ $ox := math.Max (math.Max (sub $bMinX $cx) (sub $cx $bMaxX)) 0.0 }}
+      {{ $oy := math.Max (math.Max (sub $bMinY $cy) (sub $cy $bMaxY)) 0.0 }}
+      {{ $out := math.Sqrt (add (mul (mul $ox $aspect) (mul $ox $aspect)) (mul $oy $oy)) }}
+      {{ $tiled := false }}
+      {{ if gt $out 0.0 }}
+        {{ $tiled = true }}
+        {{/* ragged inner edge so the clear centre isn't a hard rectangle */}}
+        {{ if lt $out $ragged }}
+          {{ $h := mod (add (add (mul (add $c 1) 73) (mul (add $r 1) 131)) (mul (mul (add $c 1) (add $r 1)) 17)) 100 }}
+          {{ if gt (div $h 100.0) (div $out $ragged) }}{{ $tiled = false }}{{ end }}
+        {{ end }}
+      {{ end }}
+      {{ if $tiled }}
+        {{/* outer ring fully opaque (clean dissolve to the page); interior is a
+             mosaic of solid and 50%-transparent tiles */}}
+        {{ $op := "0.5" }}
+        {{ if or (eq $c 0) (or (eq $c $cMax) (or (eq $r 0) (eq $r $rMax))) }}
+          {{ $op = "1" }}
+        {{ else }}
+          {{ $hb := mod (add (add (mul (add $c 1) 41) (mul (add $r 1) 97)) (mul (mul (add $c 1) (add $r 1)) 13)) 2 }}
+          {{ $op = cond (eq $hb 0) "1" "0.5" }}
+        {{ end }}
+        {{/* 2px gap between tiles, but flush (no gap) at the outside border */}}
+        {{ $lx := cond (eq $c 0) 0.0 $g }}{{ $rxx := cond (eq $c $cMax) 0.0 $g }}
+        {{ $ty := cond (eq $r 0) 0.0 $g }}{{ $byy := cond (eq $r $rMax) 0.0 $g }}
+        <rect x="{{ add $c $lx }}" y="{{ add $r $ty }}" width="{{ sub (sub 1.0 $lx) $rxx }}" height="{{ sub (sub 1.0 $ty) $byy }}" fill="#f5f5f2" fill-opacity="{{ $op }}"/>
+      {{ end }}
+    {{ end }}
+    {{ end }}
+  </svg>
+  <svg class="map-links" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+    <polygon points="{{ delimit $points " " }}" fill="none" stroke="var(--accent)" stroke-width="2" stroke-dasharray="3 3" vector-effect="non-scaling-stroke"/>
+  </svg>
+  {{ range $locs }}
+  <div class="map-pin map-pin--{{ .pos | default "top" }}" style="left:{{ .x }}%; top:{{ .y }}%;" tabindex="0" aria-label="{{ .name }} — {{ .kind }}">
+    <span class="map-pin-dot"></span>
+    <span class="map-pin-tag mono">{{ .tag }}</span>
+    <span class="map-pin-card">
+      <span class="map-pin-card-kind mono">{{ .kind }}</span>
+      <strong class="map-pin-card-name">{{ .name }}</strong>
+      <span class="map-pin-card-sub mono">{{ .sub }}</span>
+      <span class="map-pin-card-links">
+        {{ with .url }}<a href="{{ . }}" target="_blank" rel="noopener" class="map-pin-link mono">Website&nbsp;↗</a>{{ end }}
+        {{ with .program }}<a href="{{ . }}" class="map-pin-link mono">Program&nbsp;→</a>{{ end }}
+      </span>
+    </span>
+  </div>
+  {{ end }}
+</div>

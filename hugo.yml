@@ -29,11 +29,20 @@ menu:
       name: Speakers
       url: /speakers/
       weight: 20
-    - identifier: practical-info
-      name: Practical Info
-      url: /practical-info/
+    - identifier: location
+      name: Location
+      url: /location/
       weight: 30
     - identifier: about
       name: About
       url: /about/
       weight: 40
+  footer:
+    - identifier: privacy
+      name: Privacy
+      url: /privacy/
+      weight: 10
+    - identifier: imprint
+      name: Imprint
+      url: /imprint/
+      weight: 20

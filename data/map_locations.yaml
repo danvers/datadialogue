@@ -1,0 +1,40 @@
+- id: "pa"
+  tag: "Campus Westend"
+  name: "Workshop Location"
+  sub: "Goethe University · Campus Westend"
+  kind: "Main venue"
+  pos: "top"
+  url: "https://www.uni-frankfurt.de/en"
+  program: "/program/"
+  x: 40.47
+  y: 21.69
+- id: "nana"
+  tag: "NANÁ"
+  name: "Naná"
+  sub: "Grüneburgweg 95 · Wed dinner"
+  kind: "Dinner"
+  pos: "top"
+  url: "https://xn--nanconvivial-ebb.de/"
+  program: "/program/#wed"
+  x: 32.77
+  y: 36.5
+- id: "hotel"
+  tag: "HOTEL"
+  name: "Motel One Römer"
+  sub: "Berliner Str. 55 · Accommodation"
+  kind: "Hotel"
+  pos: "left"
+  url: "https://www.motel-one.com/en/hotels/frankfurt/hotel-frankfurt-roemer/"
+  program: ""
+  x: 56.44
+  y: 78.51
+- id: "display"
+  tag: "DISPLAY"
+  name: "Display — NODE Forum"
+  sub: "Berliner Str. 60 · Exhibition"
+  kind: "Exhibition"
+  pos: "top"
+  url: "https://nodeforum.org/activities/display/"
+  program: "/program/#thu"
+  x: 59.61
+  y: 74.83

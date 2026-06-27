@@ -1,6 +1,16 @@
 <footer class="site-footer">
   <div class="wrap footer-grid">
     <p>&copy; {{ now.Year }} {{ site.Title }}</p>
-    <p class="footer-voice">CRITICAL · REFLECTIVE · RIGOROUS · INCLUSIVE · EXPERIMENTAL · OPEN</p>
+    <nav class="footer-nav" aria-label="Footer">
+      {{ range site.Menus.main }}
+      <a href="{{ .URL }}">{{ .Name }}</a>
+      {{ end }}
+      {{ with site.Menus.footer }}
+      <span class="footer-nav-sep" aria-hidden="true">·</span>
+      {{ range . }}
+      <a href="{{ .URL }}" class="footer-nav-legal">{{ .Name }}</a>
+      {{ end }}
+      {{ end }}
+    </nav>
   </div>
 </footer>
