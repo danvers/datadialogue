@@ -32,7 +32,7 @@ From the central station, Campus Westend can be reached in approximately **15–
 
 ### Public Transport
 
-Frankfurt has an extensive public transport network operated by RMV. Campus Westend is easily accessible by Subway (Underground), Tram and Bus.
+Frankfurt has an extensive public transport network operated by RMV. Campus Westend is easily accessible by subway (Underground), tram and bus.
 
 The closest stations (Underground) include:
 
