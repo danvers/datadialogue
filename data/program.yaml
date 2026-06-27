@@ -10,7 +10,7 @@
       title: "Opening & Welcome"
       type: break
     - time: "14:00 – 17:00"
-      title: "Creative Data Literacy with Stefanie Posavec"
+      title: "Creative Data Visualization with Stefanie Posavec"
       type: session
       details: "Hands-on workshop exploring hand-drawn and experimental approaches to data visualization. In this workshop, participants will engage with various techniques and tools to create compelling data visualizations. No prior experience in data visualization is required, and all materials will be provided. Participants are encouraged to bring their own datasets or ideas to work with during the session."
     - time: "17:00 – 18:00"
@@ -18,7 +18,7 @@
       type: break
     - time: "19:00"
       title: "Dinner together — Naná"
-      type: meal
+      type: session
       details: "Group dinner to close out Day 1 at Naná, a convivial Sicilian/Italian kitchen in the Westend (Grüneburgweg 95, a short walk from Campus Westend)."
 
 - id: thu
