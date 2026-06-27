@@ -1,6 +1,6 @@
-# RMU Data Dialogue
+# About
 
-The **RMU Data Dialogue** is the website and digital home of the *RMU Data Dialogues* starting in 2026. It is an interdisciplinary platform for critical engagement with data, algorithms, visualization, and computational cultures.
+This repository is the website of the *RMU Data Dialogues* starting in 2026. It is an interdisciplinary platform for critical engagement with data, algorithms, visualization, and computational cultures.
 
 The website is built with **Hugo** and serves as a lightweight, open, and reproducible infrastructure for publishing events, projects, teaching materials, and research.
 
@@ -8,7 +8,7 @@ The website is built with **Hugo** and serves as a lightweight, open, and reprod
 
 ---
 
-## About
+## About the RMU Data Dialogue
 
 Data Dialogue brings together perspectives from education, computer science, design, the social sciences, and the humanities to explore how data shape knowledge, institutions, and everyday life.
 
@@ -28,9 +28,7 @@ Contributions, suggestions, and corrections are welcome. Please open an issue or
 
 ## License
 
-Unless stated otherwise, all original website content is licensed under
-
-**Creative Commons Attribution 4.0 International (CC BY 4.0)**
+Unless stated otherwise, all original website content is licensed under **Creative Commons Attribution 4.0 International (CC BY 4.0)**
 
 Source code is released under the **MIT License**. Please check individual files where different licenses apply.
 
