@@ -17,7 +17,13 @@ body {
   background: var(--paper);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  /* sticky footer: keep the footer pinned to the bottom on short pages
+     (e.g. 404) so the paper background never shows below the ink footer */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
+main.wrap { flex: 1 0 auto; }
 
 .mono {
   font-family: "IBM Plex Mono", ui-monospace, monospace;
@@ -833,15 +839,22 @@ a.logo-slot.has-logo:hover img { filter: grayscale(0); }
 .map-pin:focus-within .map-pin-dot { border-color: var(--accent); }
 
 /* 404 — interactive network field */
+/* the 404 hero fills the whole area between header and footer, edge to edge */
+main.wrap:has(.error-hero) {
+  display: flex;
+  flex-direction: column;
+}
 .error-hero {
   position: relative;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 68vh;
-  margin: 2.5rem 0 3rem;
-  border: 2px solid var(--ink);
+  flex: 1 0 auto;
+  min-height: 60vh;
+  /* break out of the .wrap max-width/padding to span the full viewport width */
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
   background: var(--paper);
 }
 .error-hero canvas {
