@@ -233,18 +233,26 @@ a:hover { color: var(--charcoal); }
   color: var(--charcoal);
 }
 .logo-slot.has-logo {
+  position: relative;
   border-style: solid;
   border-color: var(--ink);
   background: var(--white);
   min-width: 160px;
   max-width: 320px;
   padding: 1rem 1.5rem;
-  transition: border-color 0.15s ease, transform 0.15s ease;
 }
-a.logo-slot.has-logo:hover {
-  border-color: var(--accent);
-  transform: translateY(-2px);
+.logo-slot.has-logo::after {
+  content: "";
+  position: absolute;
+  right: -2px;
+  bottom: -2px;
+  width: 10px;
+  height: 10px;
+  background: var(--accent);
+  opacity: 0;
+  transition: opacity 0.15s ease;
 }
+a.logo-slot.has-logo:hover::after { opacity: 1; }
 .logo-slot img {
   max-width: 100%;
   max-height: 56px;
@@ -310,7 +318,6 @@ a.logo-slot.has-logo:hover img { filter: grayscale(0); }
   border: 2px solid var(--ink);
   backface-visibility: hidden;
 }
-.avatar-front { position: relative; }
 .avatar-front::after {
   content: "";
   position: absolute;

@@ -17,6 +17,10 @@ params:
 
 menu:
   main:
+    - identifier: home
+      name: Home
+      url: /
+      weight: 5
     - identifier: program
       name: Program
       url: /program/
