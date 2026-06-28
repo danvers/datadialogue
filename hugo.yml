@@ -25,9 +25,9 @@ menu:
       name: Program
       url: /program/
       weight: 10
-    - identifier: speakers
-      name: Speakers
-      url: /speakers/
+    - identifier: people
+      name: People
+      url: /people/
       weight: 20
     - identifier: location
       name: Location
