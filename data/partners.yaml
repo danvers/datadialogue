@@ -2,9 +2,6 @@ organizers:
   - name: "Goethe University Frankfurt / Center for Critical Computational Studies (C3S)"
     logo: "/images/c3s-goethe-logo.png"
     url: "https://www.c3s-frankfurt.de/"
-  - name: "Johannes Gutenberg University Mainz"
-    logo: "/images/jgu-mainz.jpg"
-    url: "https://www.uni-mainz.de/en/"
 
 supporters:
   - name: "City of Frankfurt"

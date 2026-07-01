@@ -8,16 +8,15 @@ review and replace with the legally binding version before publication.
 
 ## Responsible
 
-Prof. Dr. Dan Verständig
+[Prof. Dr. Dan Verständig](https://www.c3s-frankfurt.de/211)
 
-Goethe University Frankfurt
-Center for Critical Computational Studies (C3S)
-Theodor-W.-Adorno-Platz 1
-60323 Frankfurt am Main
+Goethe University Frankfurt  
+Center for Critical Computational Studies (C3S)  
+Theodor-W.-Adorno-Platz 1  
+60323 Frankfurt am Main  
 Germany
 
-For any questions regarding data protection, please contact
-contact@datadialogue.eu
+For any questions regarding data protection, please contact us at <contact@datadialogue.eu>
 
 ## What Data We Process
 
