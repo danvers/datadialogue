@@ -292,8 +292,8 @@ a.logo-slot.has-logo:hover img { filter: grayscale(0); }
 .person-card { flex: 0 1 150px; max-width: 150px; }
 
 .avatar-flip {
-  width: 90px;
-  height: 96px;
+  width: 120px;
+  height: 120px;
   margin: 0 auto 0.85rem;
   perspective: 480px;
 }
